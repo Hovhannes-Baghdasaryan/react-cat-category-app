@@ -1,9 +1,9 @@
 import { useState, type FC } from 'react'
 
+import { useResponsive } from 'hooks'
 import { Cats, Sidebar } from 'components'
 
 import styles from './Home.module.scss'
-import { useResponsive } from 'hooks'
 
 const HomeContainer: FC = () => {
   const { isMobile } = useResponsive()

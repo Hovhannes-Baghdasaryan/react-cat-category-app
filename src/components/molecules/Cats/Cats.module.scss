@@ -37,6 +37,11 @@
         grid-template-columns: 1fr 1fr 1fr;
         gap: 15px;
 
+        &__skeleton {
+          width: 100px;
+          height: 100px;
+        }
+
         @media (max-width: 600px) {
           grid-template-columns: 1fr 1fr;
         }

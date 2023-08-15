@@ -1,8 +1,8 @@
 import { useEffect, type FC } from 'react'
 
 import { useResponsive } from 'hooks'
-import { Categories } from 'components'
 import { fetchCats } from 'store/cats/actions'
+import { Categories, Skeleton } from 'components'
 import { CatsSelectors } from 'store/cats/selectors'
 import { useAppDispatch, useAppSelector } from 'libraries'
 
@@ -22,11 +22,19 @@ const Cats: FC<I_CatsProps> = ({ page, setPage, categoryId, setCategoryId }) => 
 
   const onLoadMoreClickCallback = () => setPage(prev => prev + 1)
 
-  const renderCats = catsData?.[categoryId]
-    ? catsData?.[categoryId].map(element => (
-        <img key={element.id + element.url} src={element.url} width={100} height={100} />
-      ))
-    : null
+  const skeletonArray = Array.from({ length: 10 }, (_, i) => i + 1)
+
+  const renderCats = catsData?.[categoryId] ? (
+    catsData?.[categoryId].map(element => (
+      <img key={element.id + element.url} src={element.url} width={100} height={100} />
+    ))
+  ) : (
+    <>
+      {skeletonArray.map(element => (
+        <Skeleton key={element} className={styles.wrapper__inner__list__items__skeleton} />
+      ))}
+    </>
+  )
 
   return (
     <div className={styles.wrapper}>
