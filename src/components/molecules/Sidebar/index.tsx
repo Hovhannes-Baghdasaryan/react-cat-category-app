@@ -7,7 +7,7 @@ import { T_SidebarProps } from './types'
 
 const Sidebar: FC<T_SidebarProps> = ({ setCategoryId }) => (
   <aside className={styles.wrapper}>
-    <h2 className={styles.wrapper__title}>Categories</h2>
+    <h3 className={styles.wrapper__title}>Categories</h3>
     <Categories setCategoryId={setCategoryId} />
   </aside>
 )
