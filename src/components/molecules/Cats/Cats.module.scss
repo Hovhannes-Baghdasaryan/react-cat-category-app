@@ -1,0 +1,52 @@
+@import 'styles/vars';
+@import 'styles/colors';
+@import 'styles/typography';
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  padding-top: 10px;
+  @extend %flex-justify-center;
+  overflow-y: scroll;
+  max-height: calc(100% - 50px);
+
+  &__inner {
+    gap: 25px;
+    @extend %flex-column-align-center;
+
+    &__categories {
+      padding: 0;
+      display: grid;
+      grid-auto-rows: 1fr;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    &__title {
+      color: $secondary-1100;
+      @extend %title-m;
+    }
+
+    &__list {
+      width: 100%;
+      gap: 30px;
+      @extend %flex-column;
+
+      &__items {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 15px;
+
+        @media (max-width: 600px) {
+          grid-template-columns: 1fr 1fr;
+          justify-content: space-between;
+        }
+      }
+
+      &__load__more {
+        width: 100%;
+        padding: 10px;
+      }
+    }
+  }
+}

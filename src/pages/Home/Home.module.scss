@@ -1,0 +1,6 @@
+@import 'styles/vars';
+
+.wrapper {
+  height: 100%;
+  @extend %flex-align;
+}

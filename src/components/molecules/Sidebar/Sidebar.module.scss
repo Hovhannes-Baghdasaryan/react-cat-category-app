@@ -1,0 +1,17 @@
+@import 'styles/vars';
+@import 'styles/colors';
+
+.wrapper {
+  height: 100%;
+  width: 250px;
+  background-color: $background-80;
+  border-radius: 0 20px 20px 0;
+  @extend %flex-column;
+  gap: 10px;
+
+  &__title {
+    padding: 10px;
+    text-align: center;
+    color: #ffffff;
+  }
+}

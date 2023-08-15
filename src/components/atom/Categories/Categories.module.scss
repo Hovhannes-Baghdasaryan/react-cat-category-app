@@ -1,0 +1,20 @@
+@import 'styles/colors';
+@import 'styles/vars';
+
+.wrapper {
+  gap: 15px;
+  padding: 0 10px;
+  @extend %flex-column;
+
+  &__item {
+    @extend %flex-justify-center;
+
+    &__button {
+      min-width: 150px;
+      background-color: $primary-100;
+      color: #ffffff;
+      border-radius: 5px;
+      padding: 12px 20px;
+    }
+  }
+}
