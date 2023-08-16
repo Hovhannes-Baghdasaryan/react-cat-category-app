@@ -1,1 +1,1 @@
-export { default as useResponsive } from './useResponsve'
+export { default as useResponsive } from './useResponsive'
